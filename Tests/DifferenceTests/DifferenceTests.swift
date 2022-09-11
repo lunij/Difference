@@ -352,32 +352,3 @@ class DifferenceTests: XCTestCase {
         runTest(expected: truth, received: truth, expectedResults: [""])
     }
 }
-
-extension DifferenceTests {
-    static var allTests = [
-        ("testCanFindRootPrimitiveDifference", testCanFindRootPrimitiveDifference),
-        ("testCanFindPrimitiveDifference", testCanFindPrimitiveDifference),
-        ("testCanFindMultipleDifference", testCanFindMultipleDifference),
-        ("testCanFindComplexDifference", testCanFindComplexDifference),
-        ("testCanGiveDescriptionForOptionalOnLeftSide", testCanGiveDescriptionForOptionalOnLeftSide),
-        ("testCanGiveDescriptionForOptionalOnRightSide", testCanGiveDescriptionForOptionalOnRightSide),
-        ("test_canFindCollectionCountDifference", test_canFindCollectionCountDifference),
-        ("test_canFindCollectionCountDifference_complex", test_canFindCollectionCountDifference_complex),
-        ("test_labelsArrayElementsInDiff", test_labelsArrayElementsInDiff),
-        ("test_canFindEnumCaseDifferenceWhenAssociatedValuesAreIdentical", test_canFindEnumCaseDifferenceWhenAssociatedValuesAreIdentical),
-        ("test_canFindEnumCaseDifferenceWhenLessArguments", test_canFindEnumCaseDifferenceWhenLessArguments),
-        ("test_canFindDictionaryCountDifference", test_canFindDictionaryCountDifference),
-        ("test_canFindOptionalDifferenceBetweenSomeAndNone", test_canFindOptionalDifferenceBetweenSomeAndNone),
-        ("test_canFindDictionaryDifference", test_canFindDictionaryDifference),
-        ("test_canFindDictionaryKeyDifference", test_canFindDictionaryKeyDifference),
-        ("test_canFindSetCountDifference", test_canFindSetCountDifference),
-        ("test_canFindOptionalSetDifferenceBetweenSomeAndNone", test_canFindOptionalSetDifferenceBetweenSomeAndNone),
-        ("test_canFindSetDifference", test_canFindSetDifference),
-        ("test_canFindObjCEnumDifferenceInStructure", test_canFindObjCEnumDifferenceInStructure),
-        ("test_canFindObjCEnumDifference", test_canFindObjCEnumDifference),
-        ("test_cannotFindDifferenceWithSameSwiftEnum", test_cannotFindDifferenceWithSameSwiftEnum),
-        ("test_cannotFindDifferenceWithSameObjects", test_cannotFindDifferenceWithSameObjects),
-        ("test_canFindObjCEnumDifferenceInArrayOfEnums", test_canFindObjCEnumDifferenceInArrayOfEnums),
-        ("test_canFindObjCEnumDifferenceInArrayOfStructures", test_canFindObjCEnumDifferenceInArrayOfStructures),
-    ]
-}
