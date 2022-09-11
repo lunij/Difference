@@ -85,7 +85,7 @@ fileprivate struct Person: Equatable {
     }
 }
 
-private enum State {
+private enum FakeEnum {
     case loaded([Int], String)
     case anotherLoaded([Int], String)
     case loadedWithDiffArguments(Int)
@@ -178,8 +178,8 @@ class DifferenceTests: XCTestCase {
 
     func test_canFindCollectionCountDifference_complex() {
         runTest(
-            expected: State.loaded([1, 2], "truthString"),
-            received: State.loaded([], "stubString"),
+            expected: FakeEnum.loaded([1, 2], "truthString"),
+            received: FakeEnum.loaded([], "stubString"),
             expectedResults: ["Enum loaded:\n|\t.0:\n|\t|\tDifferent count:\n|\t|\t|\tReceived: (0) []\n|\t|\t|\tExpected: (2) [1, 2]\n|\t.1:\n|\t|\tReceived: stubString\n|\t|\tExpected: truthString\n"]
         )
     }
@@ -209,16 +209,16 @@ class DifferenceTests: XCTestCase {
 
     func test_canFindEnumCaseDifferenceWhenAssociatedValuesAreIdentical() {
         runTest(
-            expected: State.loaded([0], "CommonString"),
-            received: State.anotherLoaded([0], "CommonString"),
+            expected: FakeEnum.loaded([0], "CommonString"),
+            received: FakeEnum.anotherLoaded([0], "CommonString"),
             expectedResults: ["Received: anotherLoaded\nExpected: loaded\n"]
         )
     }
 
     func test_canFindEnumCaseDifferenceWhenLessArguments() {
         runTest(
-            expected: State.loaded([0], "CommonString"),
-            received: State.loadedWithDiffArguments(1),
+            expected: FakeEnum.loaded([0], "CommonString"),
+            received: FakeEnum.loadedWithDiffArguments(1),
             expectedResults: ["Received: loadedWithDiffArguments\nExpected: loaded\n"]
         )
     }
@@ -342,8 +342,8 @@ class DifferenceTests: XCTestCase {
 
     func test_cannotFindDifferenceWithSameSwiftEnum() {
         runTest(
-            expected: State.loadedWithNoArguments,
-            received: State.loadedWithNoArguments,
+            expected: FakeEnum.loadedWithNoArguments,
+            received: FakeEnum.loadedWithNoArguments,
             expectedResults: [""]
         )
     }
